@@ -98,9 +98,10 @@ gulp.task('browserify', function () {
 
 gulp.task('browser-sync', function() {
     browserSync({
-        server: {
-            baseDir: "./build"
-        }
+         proxy: "localhost/devon-atlas/build"
+        // server: {
+        //     baseDir: "./build"
+        // }
     });
 });
 

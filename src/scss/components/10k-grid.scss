@@ -1,0 +1,177 @@
+.map-container {
+    width: $map-scale + 1px;
+    height: $map-scale + 1px;
+    border-top: 1px solid $grey;
+    border-right: 1px solid $grey;
+    background: url('../img/all.jpg') no-repeat;
+    background-size: 100%;
+    // display: table;
+}
+
+.ten-k {
+    width: $map-scale / 13;
+    height: $map-scale / 13;
+}
+
+.map-row {
+    // display: table-row;
+}
+
+.tenk {
+    margin: 0;
+    padding: 0;
+    width: $map-scale / 13;
+    height: $map-scale / 13;
+
+    display: block;
+    float: left;
+
+    // display: table-cell;
+    position: relative;
+    // border: 1px solid $grey;
+    border-left: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+}
+
+
+.tetrad {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+
+    &.true {
+        background-color: goldenrod;
+    }
+    // &:nth-child(even) {
+    //     background-color: $grey;
+    // }
+    &:nth-child(2) {
+        top: 0;
+        left: 20%;
+    }
+
+    &:nth-child(3) {
+        top: 0;
+        left: 40%;
+    }
+
+    &:nth-child(4) {
+        top: 0;
+        left: 60%;
+    }
+
+    &:nth-child(5) {
+        top: 0;
+        left: 80%;
+    }
+
+    &:nth-child(6) {
+        top: 20%;
+        left: 0;
+    }
+
+    &:nth-child(7) {
+        top: 20%;
+        left: 20%;
+    }
+
+    &:nth-child(8) {
+        top: 20%;
+        left: 40%;
+    }
+
+    &:nth-child(9) {
+        top: 20%;
+        left: 60%;
+    }
+
+    &:nth-child(10) {
+        top: 20%;
+        left: 80%;
+    }
+
+    &:nth-child(11) {
+        top: 40%;
+        left: 0;
+    }
+
+    &:nth-child(12) {
+        top: 40%;
+        left: 20%;
+    }
+
+    &:nth-child(13) {
+        top: 40%;
+        left: 40%;
+    }
+
+    &:nth-child(14) {
+        top: 40%;
+        left: 60%;
+    }
+
+    &:nth-child(15) {
+        top: 40%;
+        left: 80%;
+    }
+
+    &:nth-child(16) {
+        top: 60%;
+        left: 0%;
+
+    }
+
+    &:nth-child(17) {
+        top: 60%;
+        left: 20%;
+
+    }
+
+    &:nth-child(18) {
+        top: 60%;
+        left: 40%;
+
+    }
+
+    &:nth-child(19) {
+        top: 60%;
+        left: 60%;
+
+    }
+
+    &:nth-child(20) {
+        top: 60%;
+        left: 80%;
+
+    }
+
+    &:nth-child(21) {
+        top: 80%;
+        left: 0%;
+
+    }
+
+    &:nth-child(22) {
+        top: 80%;
+        left: 20%;
+
+    }
+
+    &:nth-child(23) {
+        top: 80%;
+        left: 40%;
+
+    }
+    &:nth-child(24) {
+        top: 80%;
+        left: 60%;
+
+    }
+
+    &:nth-child(25) {
+        top: 80%;
+        left: 80%;
+
+    }
+
+}

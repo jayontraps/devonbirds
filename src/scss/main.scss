@@ -3,16 +3,31 @@
 @import "variables";
 @import "mixins";
 @import "utilities";
+@import "global";
 @import "grid";
 
 // components
 @import "components/button";
 @import "components/media";
+@import "components/10k-grid";
 
 // navigation
 @import "navigation/main-nav";
 
 // pages 
+.container {
+    width: 100%;
+}
+.tet {
+    width: 20px;
+    height: 20px;
+    border-left: 1px solid grey;
+    border-bottom: 1px solid grey;
+    float: left;
+    &.className {
+        background-color: goldenrod;
+    }
+}
 
 
 

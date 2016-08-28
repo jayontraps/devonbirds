@@ -9,7 +9,6 @@ js.cookie.js
 
 	$(document).ready(function() {
 
-		console.log('Do jQuery stuff here');
 
 	});
 
