@@ -38,10 +38,6 @@
     width: 20%;
     height: 20%;
     position: absolute;
-
-    &.true {
-        background-color: goldenrod;
-    }
     // &:nth-child(even) {
     //     background-color: $grey;
     // }
@@ -175,3 +171,37 @@
     }
 
 }
+
+.code-A,
+.code-B,
+.code-K, .code-N {
+    background-image: url('../img/circle.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.code-A {
+    background-size: 100%;
+}
+.code-B {
+    background-size: 80%;
+}
+.code-K {
+    background-size: 65%;
+}
+.code-N {
+    background-image: url('../img/circle-stroke.svg');
+    background-size: 60%;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -14,7 +14,10 @@
 // navigation
 @import "navigation/main-nav";
 
-// pages 
+// plugins
+@import "vendor/chosen";
+
+// pages
 .container {
     width: 100%;
 }
