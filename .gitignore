@@ -1,5 +1,5 @@
 .DS_Store
 node_modules
-build/css
-build/js
+ajax/config.php
+ajax/db.inc.php
 
