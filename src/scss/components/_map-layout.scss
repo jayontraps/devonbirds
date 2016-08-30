@@ -1,0 +1,14 @@
+.container {
+    width: 100%;
+}
+
+.map-container {
+    width: $map-scale;
+    height: $map-scale;
+    position: relative;
+    // border-top: 1px solid $grey;
+    // border-right: 1px solid $grey;
+    background: url('../img/all.jpg') no-repeat;
+    background-size: 100%;
+    // display: table;
+}

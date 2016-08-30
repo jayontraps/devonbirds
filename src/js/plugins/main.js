@@ -10,7 +10,7 @@ chosen.jquery.min.js
 
 	$(document).ready(function() {
 
-        $("#js_species").chosen({
+        $(".select-species").chosen({
             disable_search_threshold: 10,
             no_results_text: "Oops, nothing found!",
             width: "95%"
