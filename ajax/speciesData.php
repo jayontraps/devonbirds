@@ -7,7 +7,7 @@
   $dataset = stripslashes($dataset);
 
   try {
-    $conn = new PDO('mysql:host=localhost;dbname=devonbirdatlas', $config['DB_USERNAME'], $config['DB_PASSWORD']);
+    $conn = new PDO('mysql:host=localhost;dbname=devon_data', $config['DB_USERNAME'], $config['DB_PASSWORD']);
 
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
