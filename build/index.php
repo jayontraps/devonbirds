@@ -9,8 +9,13 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <select name="" id="js_species">
+        <select class="select-controls select-species" name="species" id="js_species">
             <?php include('inc/species-option-list.php'); ?>
+        </select>
+        <select class="select-controls select-data-set" name="data-set" id="js_data_set">
+            <option value="dbreed">Breeding Status</option>
+            <option value="dbdensity">Breeding Abundance</option>
+            <option value="dwdensity">Winter Abundance</option>
         </select>
 
 <div class="map-container">

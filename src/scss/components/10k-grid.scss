@@ -38,9 +38,9 @@
     width: 20%;
     height: 20%;
     position: absolute;
-    // &:nth-child(even) {
-    //     background-color: $grey;
-    // }
+    // border-left: 1px solid $grey;
+    // border-bottom: 1px solid $grey;
+
     &:nth-child(2) {
         top: 0;
         left: 20%;
@@ -175,24 +175,29 @@
 .code-A,
 .code-B,
 .code-K, .code-N {
-    background-image: url('../img/circle.svg');
+    // background-image: url('../img/circle.svg');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 9px;
 }
 
 
 .code-A {
-    background-size: 100%;
+    background-image: url('../img/circle-1.svg');
+    // background-size: 100%;
 }
 .code-B {
-    background-size: 80%;
+    background-image: url('../img/circle-2.svg');
+    // background-size: 80%;
 }
 .code-K {
-    background-size: 65%;
+    background-image: url('../img/circle-3.svg');
+    // background-size: 65%;
 }
 .code-N {
-    background-image: url('../img/circle-stroke.svg');
-    background-size: 60%;
+    background-image: url('../img/circle-4.svg');
+    // background-image: url('../img/circle-stroke.svg');
+    // background-size: 60%;
 }
 
 
