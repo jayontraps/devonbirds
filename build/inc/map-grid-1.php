@@ -1,7 +1,3 @@
-<div class="map-container clearfix">
-
-<?php include('inc/spinner.php'); ?>
-
 <div class="map-row">
 <div id="m1_SS15" class="tenk"></div>
 <div id="m1_SS25" class="tenk"></div>
@@ -18,7 +14,7 @@
 <div id="m1_ST35" class="tenk"></div>
 </div>
 <div class="map-row">
-<div id="m1_SS14" class="tenk"></div>
+<div id="m1_SS14" class="tenk parent"></div>
 <div id="m1_SS24" class="tenk"></div>
 <div id="m1_SS34" class="tenk"></div>
 <div id="m1_SS44" class="tenk parent"></div>
@@ -204,6 +200,4 @@
 <div id="m1_SY13" class="tenk"></div>
 <div id="m1_SY23" class="tenk"></div>
 <div id="m1_SY33" class="tenk"></div>
-</div>
-
 </div>

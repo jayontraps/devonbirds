@@ -38,10 +38,10 @@ MapModule.prototype.getTetradData = function(tetradId) {
         console.log(data);
     })
     .fail(function() {
-        console.log("error");
+        console.log("getTetradData - error");
     })
     .always(function() {
-        console.log("complete");
+        console.log("getTetradData - complete");
     });
 
 }
@@ -72,14 +72,12 @@ MapModule.prototype.getData = function() {
                     $('#' + theId + prevResults[i]).removeClass();
                 }
             }
-            console.log(data.length);
+
             tetArr = [];
             for (var i = 0; i < data.length; i++) {
                 tetArr.push(data[i]['Tetrad']);
                 sessionStorage.setItem(theId + "currentArra", JSON.stringify(tetArr));
             }
-
-            console.log(tetArr);
 
             for (var i = 0; i < tetArr.length; i++) {
                     $('#' + theId + tetArr[i])
@@ -93,10 +91,11 @@ MapModule.prototype.getData = function() {
             }, 1000);
         })
         .fail(function() {
-            console.log("error");
+            console.log("getData - error");
         })
         .always(function() {
-            console.log("complete");
+            console.log("getData - complete");
+            console.log(obj);
         });
 
 };

@@ -3,5 +3,6 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-<circle fill="#FF0000" cx="50" cy="50" r="49"/>
+<path fill="#FF0000" d="M98,50c0,26.513-21.489,48-48,48C23.49,98,2,76.513,2,50C2,23.491,23.49,2,50,2C76.511,2,98,23.491,98,50z"
+	/>
 </svg>
