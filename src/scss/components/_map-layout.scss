@@ -4,6 +4,13 @@
     margin: 0 auto;
 }
 
+@media screen and (max-width: 1025px) {
+
+    .tetrad-maps, .header {
+        padding: 1em;
+    }
+}
+
 .container {
     width: 100%;
 }
