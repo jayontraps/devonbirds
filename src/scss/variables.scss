@@ -12,7 +12,7 @@ $col_padding: 2rem;
 
 
 // layout
-$max_width: 75rem; // 1200px
+$max_width: 1100px; // 1200px
 $max_width_medium: 60rem; // 960px
 $max_width_small: 50rem; // 800px
 
@@ -22,10 +22,24 @@ $default_spacing: 1.5rem;
 
 
 // maps
-$map-scale: 650px;
-// $map-scale: 450px;
+$full-scale: 600px;
+$half-scale: 440px;
+// $full-scale: 100%;
+// $full-scale: 450px;
 
 // colors
 $grey: rgba(0,0,0,.2);
 $dbdensity : red;
 $dwdensity : blue;
+
+
+$border-color: #999;
+$body_bgc: transparent;
+
+// borders
+$devon_border: 1px solid $border-color;
+
+// form els
+// select
+$select-font-size: 13px;
+$select-height: 26px;

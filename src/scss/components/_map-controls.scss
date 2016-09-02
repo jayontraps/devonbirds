@@ -1,8 +1,11 @@
 .controls {
-    margin: $default_spacing auto;
+    margin-bottom: $default_spacing;
 }
 
 .select-controls {
-    width: 50%;
+    width: 45%;
     float: left;
+    &:last-of-type {
+        float: right;
+    }
 }

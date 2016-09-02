@@ -1,7 +1,7 @@
 <?php
   require 'config.php';
-  $tetrad = $_POST['tetradId'];
-  $tetrad = stripslashes($tetrad);
+  $species = $_POST['species'];
+  $species = stripslashes($species);
 
   $dataset = $_POST['data-set'];
   $dataset = stripslashes($dataset);
@@ -11,10 +11,10 @@
 
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $conn->prepare('SELECT Species,Code FROM ' . $dataset . ' WHERE Tetrad =:tetrad');
+    $stmt = $conn->prepare('SELECT Tetrad,Code FROM ' . $dataset . ' WHERE Species =:species');
 
     $stmt->execute(array(
-      'tetrad' => $tetrad
+      'species' => $species
     ));
 
     $results=$stmt->fetchAll(PDO::FETCH_ASSOC);

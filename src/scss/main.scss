@@ -8,12 +8,16 @@
 
 // components
 @import "components/button";
+@import "components/select-inputs";
 @import "components/spinner";
 @import "components/media";
-@import "components/10k-grid";
+@import "components/tetrad-grid";
 @import "components/map-controls";
 @import "components/map-layout";
 @import "components/overlay";
+@import "components/overlay-controls";
+@import "components/map-breeding-toggles";
+
 
 // navigation
 @import "navigation/main-nav";
@@ -22,20 +26,7 @@
 @import "vendor/chosen";
 
 // pages
-.container {
-    width: 100%;
-}
-.tet {
-    width: 20px;
-    height: 20px;
-    border-left: 1px solid grey;
-    border-bottom: 1px solid grey;
-    float: left;
-    &.className {
-        background-color: goldenrod;
-    }
-}
-
-
+@import "pages/map-page-layout";
+@import "pages/overview-page-layout";
 
 

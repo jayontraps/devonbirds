@@ -60,12 +60,28 @@ $(document).ready(function() {
         maps.m2_.setSpecies('Alpine Swift');
         maps.m2_.setDataset('dbreed');
 
+        // templating functions
+        function updateHeadings(currentMap) {
+            $('#' + currentMap).find('.species-title').html(maps[currentMap].species);
+            var latinName = maps[currentMap].getLatinName();
+            if (latinName) {
+                $('#' + currentMap).find('.latin-name').html(latinName);
+            }
+        }
+
+
 
         $('.container').on('change', '.select-species', function(event) {
             var currentMap = event.delegateTarget.id;
             maps[currentMap].startSpinner();
             maps[currentMap].setSpecies(this.value);
             maps[currentMap].getData();
+            updateHeadings(currentMap);
+
+            // var latinName = maps[currentMap].getLatinName();
+            // if (latinName) {
+            //     $('#' + currentMap).find('.latin-name').html(latinName);
+            // }
         });
 
         $('.container').on('change', '.select-data-set', function(event) {

@@ -1,9 +1,63 @@
+.tetrad-maps {
+    width: 100%;
+    max-width: $max_width;
+    margin: 0 auto;
+}
+
 .container {
     width: 100%;
 }
 
 .map-container {
-    width: $map-scale;
-    height: $map-scale;
+    width: $full-scale + 2px;
+    height: $full-scale + 2px;
+    border: 1px solid $border-color;
     position: relative;
+}
+.map-full {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    display: flex;
+}
+
+.map-column {
+    width: $full-scale;
+    float: left;
+    position: relative;
+}
+
+.map-meta {
+    width: calc(100% - 650px);
+    float: left;
+    position: relative;
+    padding-left: $default_spacing;
+}
+
+.double {
+    .container {
+        width: 50%;
+        float: left;
+    }
+    .map-full {
+        flex-direction: column;
+    }
+    #m2_ {
+        .map-full {
+            align-items: flex-end;
+        }
+    }
+    .map-container {
+        width: $half-scale + 2px;
+        height: $half-scale + 2px;
+    }
+    .map-column {
+        width: $half-scale;
+    }
+    .map-meta {
+        width: $half-scale;
+        padding-left: 0;
+    }
 }

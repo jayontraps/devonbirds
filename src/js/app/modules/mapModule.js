@@ -101,4 +101,24 @@ MapModule.prototype.getData = function() {
 };
 
 
+MapModule.prototype.getLatinName = function() {
+
+    if (typeof latinNames !== 'undefined' && latinNames.length) {
+
+        for (var i = 0; i < latinNames.length; i++) {
+
+            for(key in latinNames[i]) {
+
+                if( latinNames[i].hasOwnProperty(key)) {
+                    if (key == this.species) {
+                        return latinNames[i][key];
+                    }
+                }
+            }
+        }
+    }
+    return false;
+}
+
+
 module.exports = MapModule;

@@ -1,6 +1,17 @@
-.ten-k {
-    width: $map-scale / 13;
-    height: $map-scale / 13;
+// .ten-k {
+//     width: $full-scale / 13;
+//     height: $full-scale / 13;
+// }
+
+.double {
+    // .ten-k {
+    //     width: $half-scale / 13;
+    //     height: $half-scale / 13;
+    // }
+    .tenk {
+        width: $half-scale / 13;
+        height: $half-scale / 13;
+    }
 }
 
 .parent {
@@ -12,8 +23,8 @@
 .tenk {
     margin: 0;
     padding: 0;
-    width: $map-scale / 13;
-    height: $map-scale / 13;
+    width: $full-scale / 13;
+    height: $full-scale / 13;
 
     display: block;
     float: left;
