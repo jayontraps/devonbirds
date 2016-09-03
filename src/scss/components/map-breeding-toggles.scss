@@ -1,7 +1,7 @@
 .breeding-toggles {
     padding: 0;
-    height: $base_font_size - 1px;
-    line-height: $base_font_size - 1px;
+    height: $base_font_size;
+    line-height: $base_font_size;
     position: relative;
     .d-set {
         width: 100%;
@@ -21,6 +21,6 @@
         }
     }
     .d-set-title {
-        font-size: $base_font_size - 1px;
+        font-size: $base_font_size;
     }
 }

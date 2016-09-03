@@ -46,6 +46,8 @@ $(document).ready(function() {
         $this.is(":checked") ? overlay.show(layer, context) : overlay.hide(layer, context);
     });
 
+
+
     // map page
     if ( typeof mapPage !== 'undefined' && mapPage) {
         // setup the mapModules
@@ -60,37 +62,51 @@ $(document).ready(function() {
         maps.m2_.setSpecies('Alpine Swift');
         maps.m2_.setDataset('dbreed');
 
-        // templating functions
-        function updateHeadings(currentMap) {
-            $('#' + currentMap).find('.species-title').html(maps[currentMap].species);
-            var latinName = maps[currentMap].getLatinName();
-            if (latinName) {
-                $('#' + currentMap).find('.latin-name').html(latinName);
-            }
-        }
 
+        // dbreed and sitters toggles
+        // $('.container').on('click', '.b-toggle input', function(event) {
+        //     var currentMap = event.delegateTarget.id;
+        //     var $this = $(this);
+        //     var context = $this.closest('.container');
+
+        //     function fireGetSittersData() {
+        //         if (maps[currentMap].sittersDataIsLoaded) {
+        //             $(context).removeClass('sitters-off');
+        //         } else {
+        //             $(context).removeClass('sitters-off');
+        //             maps[currentMap].setDataset('sitters');
+        //             maps[currentMap].startSpinner();
+        //             maps[currentMap].getSittersData();
+        //             maps[currentMap].sittersDataIsLoaded = true;
+        //         }
+        //     }
+        //     if ($this.attr('data-dset') === 'dbreed') {
+        //         $this.is(":checked") ? $(context).removeClass('dbreed-off') : $(context).addClass('dbreed-off');
+        //     }
+        //     if ($this.attr('data-dset') === 'sitters') {
+        //         $this.is(":checked") ? fireGetSittersData() : $(context).addClass('sitters-off');
+        //     }
+        // });
 
 
         $('.container').on('change', '.select-species', function(event) {
             var currentMap = event.delegateTarget.id;
+            maps[currentMap].request = 'species';
+            // maps[currentMap].resetBreedingToggles();
+            // maps[currentMap].purgeSitters();
             maps[currentMap].startSpinner();
             maps[currentMap].setSpecies(this.value);
             maps[currentMap].getData();
-            updateHeadings(currentMap);
-
-            // var latinName = maps[currentMap].getLatinName();
-            // if (latinName) {
-            //     $('#' + currentMap).find('.latin-name').html(latinName);
-            // }
         });
 
         $('.container').on('change', '.select-data-set', function(event) {
             var currentMap = event.delegateTarget.id;
+            maps[currentMap].request = 'dataset';
+            // maps[currentMap].resetBreedingToggles();
             maps[currentMap].startSpinner();
             maps[currentMap].setDataset(this.value);
             maps[currentMap].getData();
         });
-
 
         $('.container').on('click', '.tenk > div', function(event) {
             var currentMap = event.delegateTarget.id;

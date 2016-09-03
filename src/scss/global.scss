@@ -8,3 +8,12 @@ html {
 img {
     max-width: 100%;
 }
+
+body {
+    font-size: $base_font_size;
+}
+
+.header, .footer {
+    height: 100px;
+    background-color: #fafafa;
+}

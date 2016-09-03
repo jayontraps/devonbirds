@@ -13,6 +13,7 @@
                     <?php include('inc/overlays.php'); ?>
                     <?php include('inc/map-grid-1.php'); ?>
                 </div>
+                <?php include('inc/map-keys.php'); ?>
             </div>
             <div class="map-meta">
                 <?php include('inc/map-title.php'); ?>
@@ -36,6 +37,7 @@
                     <?php include('inc/overlays.php'); ?>
                     <?php include('inc/map-grid-2.php'); ?>
                 </div>
+                <?php include('inc/map-keys.php'); ?>
             </div>
 
             <div class="map-meta">

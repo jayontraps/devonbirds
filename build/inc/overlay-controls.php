@@ -48,8 +48,4 @@
         <input type="checkbox" name="old" class="ov-toggle">
         <label for="tenk-grid">Old</label>
     </li>
-    <li>
-        <input type="checkbox" name="" class="ov-toggle">
-        <label for=""></label>
-    </li>
 </ul>

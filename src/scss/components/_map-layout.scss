@@ -2,6 +2,7 @@
     width: 100%;
     max-width: $max_width;
     margin: 0 auto;
+    padding: $default_spacing 0;
 }
 
 @media screen and (max-width: 1025px) {
@@ -37,13 +38,21 @@
 }
 
 .map-meta {
-    width: calc(100% - 650px);
+    width: calc(100% - 522px);
     float: left;
     position: relative;
     padding-left: $default_spacing;
 }
 
+#m2_ {
+    display: none;
+}
+
 .double {
+    #m2_ {
+        display: block;
+    }
+
     .container {
         width: 50%;
         float: left;

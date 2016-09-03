@@ -23,7 +23,7 @@
 .double {
     .tenk {
         width: 35px;
-        height: 35px; 
+        height: 35px;
         > div {
             width: 7px;
             height: 7px;
@@ -38,7 +38,7 @@
     width: $full-scale / 13;
     height: $full-scale / 13;
     width: 40px;
-    height: 40px;    
+    height: 40px;
 
     display: block;
     float: left;
@@ -51,7 +51,7 @@
         width: 20%;
         height: 20%;
         width: 8px;
-        height: 8px;        
+        height: 8px;
         position: absolute;
         // border-left: 1px solid $grey;
         // border-bottom: 1px solid $grey;
@@ -199,6 +199,21 @@
 }
 
 
+.dbreed-off {
+    .code-A,
+    .code-B,
+    .code-K, .code-N {
+        background-image: none;
+    }
+}
+.sitters-off {
+    .sitters-A,
+    .sitters-B,
+    .sitters-K {
+        background-color: transparent;
+    }
+}
+
 .code-A {
     background-image: url('../img/circle-1.svg');
 }
@@ -212,7 +227,15 @@
     background-image: url('../img/circle-4.svg');
 }
 
-
+.sitters-A {
+    background-color: $sitters_conf;
+}
+.sitters-B {
+    background-color: $sitters_prob;
+}
+.sitters-K {
+    background-color: $sitters_pos;
+}
 
 
 [data-set="dbdensity"] {

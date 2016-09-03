@@ -1,4 +1,4 @@
-$base_font_size: 15px;
+$base_font_size: 14px;
 $base_line_height: 1.5rem;
 
 $base_font_family: Helvetica, Arial, sans-serif; 
@@ -12,7 +12,7 @@ $col_padding: 2rem;
 
 
 // layout
-$max_width: 1100px; // 1200px
+$max_width: 1200px; // 1200px
 $max_width_medium: 60rem; // 960px
 $max_width_small: 50rem; // 800px
 
@@ -23,7 +23,11 @@ $default_spacing: 1.5rem;
 
 // maps
 $full-scale: 520px;
+$full-scale-tetrad-size: 8px;
+
 $half-scale: 455px;
+$half-scale-tetrad-size: 7px;
+
 // $full-scale: 100%;
 // $full-scale: 450px;
 
@@ -31,6 +35,11 @@ $half-scale: 455px;
 $grey: rgba(0,0,0,.2);
 $dbdensity : red;
 $dwdensity : blue;
+$sitters: orange;
+
+$sitters_pos: rgba(255,215,158,.75); // #FFD79E
+$sitters_prob: rgba(255,189,86,.75); // #FFBD56;
+$sitters_conf: rgba(235,141,0,.75); // #EB8D00;
 
 
 $border-color: #999;
@@ -41,5 +50,4 @@ $devon_border: 1px solid $border-color;
 
 // form els
 // select
-$select-font-size: 13px;
 $select-height: 26px;
