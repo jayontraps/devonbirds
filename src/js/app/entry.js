@@ -77,7 +77,8 @@ $(document).ready(function() {
             var currentMap = event.delegateTarget.id;
             maps[currentMap].request = 'species';
             maps[currentMap].startSpinner(['map']);
-            maps[currentMap].setSpecies(this.innerText.trim());
+            // maps[currentMap].setSpecies(this.innerText.trim());
+            maps[currentMap].setSpecies($(this).text());
             maps[currentMap].getData();
             maps[currentMap].updateSpeciesSelect();
             maps[currentMap].logModule();
