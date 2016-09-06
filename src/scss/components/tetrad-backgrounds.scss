@@ -1,0 +1,128 @@
+
+.code-A,
+.code-B,
+.code-K, .code-N {
+    // background-image: url('../img/circle.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 9px;
+    background-size: 100%;
+}
+
+/* Hide data layers */
+.data-off {
+    .code-A,
+    .code-B,
+    .code-K, .code-N {
+        background-image: none;
+    }
+    .sitters-A,
+    .sitters-B,
+    .sitters-K {
+        background-color: transparent;
+    }
+    .pres {
+        background-color: transparent;
+    }
+}
+
+
+
+
+.dbreed-off {
+    .code-A,
+    .code-B,
+    .code-K, .code-N {
+        background-image: none;
+    }
+}
+.sitters-off {
+    .sitters-A,
+    .sitters-B,
+    .sitters-K {
+        background-color: transparent;
+    }
+}
+
+.code-A {
+    background-image: url('../img/circle-1.svg');
+}
+.code-B {
+    background-image: url('../img/circle-2.svg');
+}
+.code-K {
+    background-image: url('../img/circle-3.svg');
+}
+.code-N {
+    background-image: url('../img/circle-4.svg');
+}
+
+.sitters-A {
+    background-color: $sitters_conf;
+}
+.sitters-B {
+    background-color: $sitters_prob;
+}
+.sitters-K {
+    background-color: $sitters_pos;
+}
+
+
+
+[data-set="dwdensity"] {
+
+    .code-7 {
+        background-color: rgba(0,11,140, 1);
+    }
+    .code-6 {
+        background-color: rgba(0,11,140, .84);
+    }
+    .code-5 {
+        background-color: rgba(0,11,140,.70);
+    }
+    .code-4 {
+        background-color: rgba(0,11,140,.56);
+    }
+    .code-3 {
+        background-color: rgba(0,11,140, .42);
+    }
+    .code-2 {
+        background-color: rgba(0,11,140, .28);
+    }
+    .code-1 {
+        background-color: rgba(0,11,140, .14);
+    }
+}
+
+
+[data-set="dbdensity"] {
+
+    .code-7 {
+        background-color: rgba(196,0,1, 1);
+    }
+    .code-6 {
+        background-color: rgba(196,0,1, .84);
+    }
+    .code-5 {
+        background-color: rgba(196,0,1,.70);
+    }
+    .code-4 {
+        background-color: rgba(196,0,1,.56);
+    }
+    .code-3 {
+        background-color: rgba(196,0,1, .42);
+    }
+    .code-2 {
+        background-color: rgba(196,0,1, .28);
+    }
+    .code-1 {
+        background-color: rgba(196,0,1, .14);
+    }
+}
+
+.loading-data {
+    .pres {
+        opacity: 0;
+    }
+}
+

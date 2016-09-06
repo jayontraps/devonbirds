@@ -11,37 +11,31 @@ latinNames.js
 
 	$(document).ready(function() {
 
-        // var arr = [];
+        // build the map elements
+        var tetrads = ["E", "J", "P", "U", "Z", "D", "I", "N", "T", "Y", "C", "H", "M", "S", "X", "B", "G", "L", "R", "W", "A", "F", "K", "Q", "V"];
 
-        // console.log(speciesList.length, latin.length);
+        function createTetrad(id, parent) {
+            var tet = document.createElement("div");
+            tet.setAttribute('id', id);
+            // tet.setAttribute('class', "tetrad");
+            parent.appendChild(tet);
+        }
 
-        // for (var i = 0; i < speciesList.length; i++) {
-
-        //     var englishName = speciesList[i];
-
-        //     for (var index = 0; index < latin.length; index++) {
-
-        //         for(key in latin[index]) {
-        //             if( latin[index].hasOwnProperty(key)) {
-
-        //                 if (key == englishName) {
-        //                     var obj = {};
-        //                     obj[key] = latin[index][key];
-        //                     arr.push(obj);
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-
-        // sessionStorage.setItem('arr', JSON.stringify(arr));
+        $('.parent').each(function(index, el) {
+            var parentId = el.id;
+            for (var i = 0; i < tetrads.length; i++) {
+                var tetId = parentId + tetrads[i];
+                createTetrad(tetId, el);
+            }
+        });
 
 
+
+        // template the species list and fire chosen
         for (var i = 0; i < speciesList.length; i++) {
             $('<option value="' + speciesList[i] + '" >' + speciesList[i] + '</option>')
             .appendTo('.select-species');
         }
-
 
         var media_query = window.matchMedia("(min-width: 1025px)");
         media_query.addListener(fireChosen);

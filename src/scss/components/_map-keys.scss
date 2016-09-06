@@ -3,9 +3,10 @@
 
 .key-group {
 	width:100%;
+	height: $keys-height;
 	font-size: .8rem;
 	padding: $default_spacing 0;
-	max-width: $full-scale - 50px;
+	max-width: $lg-map-width - 50px;
 }
 
 .key-container {
@@ -47,7 +48,7 @@
 	}
 
 	td.headTd {
-		width:130px;
+		// width:130px;
 		font-style:normal;
 		text-align:left;
 	}
@@ -108,66 +109,74 @@
 
 
 
+
+
+
+
 .keysq	{
 	display:inline-block;
-	width:$full-scale-tetrad-size * 1.5;
-	height:$full-scale-tetrad-size * 1.5;
-	background-color: $dbdensity;
+	width:$lg-map-2k-width * 1.5;
+	height:$lg-map-2k-width * 1.5;
+	// background-color: $dbdensity;
 	margin:0 0 0 5px;
 }
 
-.key-scale {
-	td {
-		&:nth-child(1) {
-			.keysq	{
-				opacity: (1/7)*1;;
-			}
-		}
-		&:nth-child(2) {
-			.keysq	{
-				opacity: (1/7)*2;
-			}
-		}
-		&:nth-child(3) {
-			.keysq	{
-				opacity: (1/7)*3;
-			}
-		}
-		&:nth-child(4) {
-			.keysq	{
-				opacity: (1/7)*4;
-			}
-		}
-		&:nth-child(5) {
-			.keysq	{
-				opacity: (1/7)*5;
-			}
-		}
-		&:nth-child(6) {
-			.keysq	{
-				opacity: (1/7)*6;
-			}
-		}
-		&:nth-child(7) {
-			.keysq	{
-				opacity: (1/7)*7;
-			}
-		}
-	}
-}
-
 .dwdensity {
-
 	.keysq {
-		background-color: $dwdensity;
+		// background-color: $dwdensity;
 	}
 }
+
+
+// .key-scale {
+// 	td {
+// 		&:nth-child(1) {
+// 			.keysq	{
+// 				opacity: (1/7)*1;;
+// 			}
+// 		}
+// 		&:nth-child(2) {
+// 			.keysq	{
+// 				opacity: (1/7)*2;
+// 			}
+// 		}
+// 		&:nth-child(3) {
+// 			.keysq	{
+// 				opacity: (1/7)*3;
+// 			}
+// 		}
+// 		&:nth-child(4) {
+// 			.keysq	{
+// 				opacity: (1/7)*4;
+// 			}
+// 		}
+// 		&:nth-child(5) {
+// 			.keysq	{
+// 				opacity: (1/7)*5;
+// 			}
+// 		}
+// 		&:nth-child(6) {
+// 			.keysq	{
+// 				opacity: (1/7)*6;
+// 			}
+// 		}
+// 		&:nth-child(7) {
+// 			.keysq	{
+// 				opacity: (1/7)*7;
+// 			}
+// 		}
+// 	}
+// }
+
+
+
+
 
 
 .keysq.brst	{
 	display:inline-block;
-	width:$full-scale-tetrad-size * 1.5;
-	height:$full-scale-tetrad-size * 1.5;
+	width:$lg-map-2k-width * 1.5;
+	height:$lg-map-2k-width * 1.5;
 	border:none;
 	&.present {
 		background:url('../img/circle-4.svg') center no-repeat;
@@ -193,15 +202,15 @@
 .double {
 	.keysq	{
 		display:inline-block;
-		width:$half-scale-tetrad-size * 1.5;
-		height:$half-scale-tetrad-size * 1.5;
+		width:$sm-map-2k-width * 1.5;
+		height:$sm-map-2k-width * 1.5;
 
 	}
 
 	.keysq.brst	{
 		display:inline-block;
-		width:$half-scale-tetrad-size * 1.5;
-		height:$half-scale-tetrad-size * 1.5;
+		width:$sm-map-2k-width * 1.5;
+		height:$sm-map-2k-width * 1.5;
 		border:none;
 	}
 
@@ -209,12 +218,12 @@
 
 
 
-.keysq.poss	{
-	background-color: orange;
-}
-.keysq.prob	{
-	background-color: orange;
-}
-.keysq.con	{
-	background-color: orange;
-}
+// .keysq.poss	{
+// 	background-color: orange;
+// }
+// .keysq.prob	{
+// 	background-color: orange;
+// }
+// .keysq.con	{
+// 	background-color: orange;
+// }

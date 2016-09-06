@@ -1,51 +1,55 @@
 <ul class="overlay-controls">
     <li>
+        <input type="checkbox" checked class="data-later-toggle">
+        <label>Data Layer</label>
+    </li>
+    <li>
         <input type="checkbox" checked name="sea" class="ov-toggle">
-        <label for="">sea</label>
+        <label>Sea</label>
     </li>
      <li>
         <input type="checkbox" checked name="earth" class="ov-toggle">
-        <label for="">earth</label>
+        <label>County shade</label>
     </li>
-    
+
     <li>
         <input type="checkbox" checked name="borders" class="ov-toggle">
-        <label for="">Borders</label>
+        <label>Borders</label>
     </li>
     <li>
         <input type="checkbox" checked name="rivers" class="ov-toggle">
-        <label for="">Rivers</label>
+        <label>Rivers</label>
     </li>
     <li>
         <input type="checkbox" checked name="tk-grid" class="ov-toggle">
-        <label for="">10K Grid</label>
+        <label>10K Grid</label>
     </li>
     <li>
         <input type="checkbox" name="grassland" class="ov-toggle">
-        <label for="">grassland</label>
+        <label>Grassland</label>
     </li>
     <li>
         <input type="checkbox" name="morland" class="ov-toggle">
-        <label for="">morland</label>
+        <label>Morland</label>
     </li>
     <li>
         <input type="checkbox" name="urban" class="ov-toggle">
-        <label for="">urban</label>
+        <label>Urban</label>
     </li>
     <li>
         <input type="checkbox" name="woodland" class="ov-toggle">
-        <label for="">woodland</label>
-    </li>    
+        <label>Woodland</label>
+    </li>
     <li>
         <input type="checkbox" name="arable" class="ov-toggle">
-        <label for="">arable</label>
+        <label>Arable</label>
     </li>
     <li>
         <input type="checkbox" name="coniferous-woodland" class="ov-toggle">
-        <label for="">coniferous-woodland</label>
+        <label>Coniferous-woodland</label>
     </li>
-    <li>
+<!--     <li>
         <input type="checkbox" name="old" class="ov-toggle">
-        <label for="tenk-grid">Old</label>
-    </li>
+        <label>Old</label>
+    </li> -->
 </ul>

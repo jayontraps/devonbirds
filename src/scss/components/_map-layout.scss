@@ -5,23 +5,16 @@
     padding: $default_spacing 0;
 }
 
-@media screen and (max-width: 1025px) {
-
-    .tetrad-maps, .header {
-        padding: 1em;
-    }
-}
-
 .container {
     width: 100%;
 }
 
 .map-container {
-    width: $full-scale + 2px;
-    height: $full-scale + 2px;
-    border: 1px solid $border-color;
+    width: $lg-map-width;
+    height: $lg-map-width;
     position: relative;
 }
+
 .map-full {
     &:after {
         content: "";
@@ -32,13 +25,14 @@
 }
 
 .map-column {
-    width: $full-scale;
+    width: $lg-map-width;
     float: left;
     position: relative;
 }
 
 .map-meta {
-    width: calc(100% - 522px);
+    // width: calc(100% - 522px);
+    width: 500px;
     float: left;
     position: relative;
     padding-left: $default_spacing;
@@ -48,7 +42,41 @@
     display: none;
 }
 
+@media screen and (max-width: $max_width) {
+    .tetrad-maps, .header {
+        padding: 1em;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+
+    .map-meta {
+        width: 450px;
+    }
+
+    .container {
+        width: 1024px;
+    }
+
+    .map-container {
+        width: $tablet-map-width;
+        height: $tablet-map-width;
+        position: relative;
+    }
+    .map-column {
+        width: $tablet-map-width;
+    }
+}
+
+
+
+
+
 .double {
+    &.tetrad-maps {
+        max-width: $max_width_double;
+    }
+
     #m2_ {
         display: block;
     }
@@ -66,14 +94,14 @@
         }
     }
     .map-container {
-        width: $half-scale + 2px;
-        height: $half-scale + 2px;
+        width: $sm-map-width;
+        height: $sm-map-width;
     }
     .map-column {
-        width: $half-scale;
+        width: $sm-map-width;
     }
     .map-meta {
-        width: $half-scale;
+        width: $sm-map-width;
         padding-left: 0;
     }
 }

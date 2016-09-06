@@ -4,32 +4,40 @@ $base_line_height: 1.5rem;
 $base_font_family: Helvetica, Arial, sans-serif; 
 $base_font_custom: 'Source Sans Pro', sans-serif;
 
-
-
-
 /* Grid */
 $col_padding: 2rem;
 
 
 // layout
-$max_width: 1200px; // 1200px
-$max_width_medium: 60rem; // 960px
-$max_width_small: 50rem; // 800px
-
+$max_width: 1200px;
+$max_width_double: 1100px;
 
 // spacing
 $default_spacing: 1.5rem;
 
-
 // maps
-$full-scale: 520px;
-$full-scale-tetrad-size: 8px;
+// desktop
+$lg-map-width: 650px;
+$lg-map-10k-width: 50px;
+$lg-map-2k-width: 10px;
 
-$half-scale: 455px;
-$half-scale-tetrad-size: 7px;
 
-// $full-scale: 100%;
-// $full-scale: 450px;
+// tablet
+$tablet-map-width: 520px;
+$tablet-map-10k-width: 40px;
+$tablet-map-2k-width: 8px;
+
+
+
+// double
+$sm-map-width: 455px;
+$sm-map-10k-width: 35px;
+$sm-map-2k-width: 7px;
+
+$keys-height: 120px;
+
+// $lg-map-width: 100%;
+// $lg-map-width: 450px;
 
 // colors
 $grey: rgba(0,0,0,.2);

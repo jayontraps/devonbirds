@@ -1,51 +1,21 @@
 var MapModule = require('./modules/mapModule');
+var overlay = require('./modules/overlay');
+// core
+// gettingDate
+// updating the DOM
 
-// build map elements
-var tetrads = ["E", "J", "P", "U", "Z", "D", "I", "N", "T", "Y", "C", "H", "M", "S", "X", "B", "G", "L", "R", "W", "A", "F", "K", "Q", "V"];
+
+
 
 $(document).ready(function() {
 
-    function createTetrad(id, parent) {
-        var tet = document.createElement("div");
-        tet.setAttribute('id', id);
-        tet.setAttribute('class', "tetrad");
-        parent.appendChild(tet);
-    }
-
-    $('.parent').each(function(index, el) {
-        var parentId = el.id;
-        for (var i = 0; i < tetrads.length; i++) {
-            var tetId = parentId + tetrads[i];
-            createTetrad(tetId, el);
-        }
-    });
-
-
-
-    var overlay = (function () {
-        function show(layer, $context) {
-                var $layer = $('.' + layer);
-            $context.find($layer).addClass('on');
-        }
-
-        function hide(layer, $context) {
-                var $layer = $('.' + layer);
-            $context.find($layer).removeClass('on');
-        }
-        return {
-            show: show,
-            hide: hide
-        };
-    }());
-
-
+    // overlay controls
     $('.ov-toggle').on('click', function() {
         var $this = $(this),
             layer = $this.attr('name'),
             context = $this.closest('.container')
         $this.is(":checked") ? overlay.show(layer, context) : overlay.hide(layer, context);
     });
-
 
 
     // map page
@@ -62,56 +32,61 @@ $(document).ready(function() {
         maps.m2_.setSpecies('Alpine Swift');
         maps.m2_.setDataset('dbreed');
 
-
-        // dbreed and sitters toggles
-        // $('.container').on('click', '.b-toggle input', function(event) {
-        //     var currentMap = event.delegateTarget.id;
-        //     var $this = $(this);
-        //     var context = $this.closest('.container');
-
-        //     function fireGetSittersData() {
-        //         if (maps[currentMap].sittersDataIsLoaded) {
-        //             $(context).removeClass('sitters-off');
-        //         } else {
-        //             $(context).removeClass('sitters-off');
-        //             maps[currentMap].setDataset('sitters');
-        //             maps[currentMap].startSpinner();
-        //             maps[currentMap].getSittersData();
-        //             maps[currentMap].sittersDataIsLoaded = true;
-        //         }
-        //     }
-        //     if ($this.attr('data-dset') === 'dbreed') {
-        //         $this.is(":checked") ? $(context).removeClass('dbreed-off') : $(context).addClass('dbreed-off');
-        //     }
-        //     if ($this.attr('data-dset') === 'sitters') {
-        //         $this.is(":checked") ? fireGetSittersData() : $(context).addClass('sitters-off');
-        //     }
-        // });
-
-
         $('.container').on('change', '.select-species', function(event) {
             var currentMap = event.delegateTarget.id;
             maps[currentMap].request = 'species';
-            // maps[currentMap].resetBreedingToggles();
-            // maps[currentMap].purgeSitters();
-            maps[currentMap].startSpinner();
-            maps[currentMap].setSpecies(this.value);
+            maps[currentMap].startSpinner(['map']);
+            maps[currentMap].setSpecies(this.value.trim());
             maps[currentMap].getData();
+
+            maps[currentMap].logModule();
         });
 
         $('.container').on('change', '.select-data-set', function(event) {
             var currentMap = event.delegateTarget.id;
             maps[currentMap].request = 'dataset';
-            // maps[currentMap].resetBreedingToggles();
-            maps[currentMap].startSpinner();
+            maps[currentMap].startSpinner(['map']);
             maps[currentMap].setDataset(this.value);
             maps[currentMap].getData();
+            maps[currentMap].getTetradData();
+
+            maps[currentMap].logModule();
         });
 
         $('.container').on('click', '.tenk > div', function(event) {
+
+            var isSelected = $(this).hasClass('selected');
+
+            var currentMap = event.delegateTarget.id,
+                tetradId = event.target.id,
+                tetradName = event.target.id.slice(3, 8);
+
+            if (isSelected) {
+                maps[currentMap].hideCurrentlySelectedTetradInfo(tetradId);
+                return false;
+            }
+            maps[currentMap].request = 'tetrad';
+            maps[currentMap].updateSelectedTetrad(tetradId);
+            maps[currentMap].setTetradStatus(tetradName, tetradId);
+            maps[currentMap].getTetradData();
+
+            maps[currentMap].logModule();
+        });
+
+        $('.container').on('click', '.tetrad-list li', function(event) {
             var currentMap = event.delegateTarget.id;
-            var tetradName = event.target.id.slice(3, 8);
-            maps[currentMap].getTetradData(tetradName);
+            maps[currentMap].request = 'species';
+            maps[currentMap].startSpinner(['map']);
+            maps[currentMap].setSpecies(this.innerText.trim());
+            maps[currentMap].getData();
+            maps[currentMap].updateSpeciesSelect();
+            maps[currentMap].logModule();
+        });
+
+        $('.container').on('click', '.data-later-toggle', function(event) {
+            var currentMap = event.delegateTarget.id,
+            $this = $(this);
+            maps[currentMap].toggleDataLayer($this);
         });
 
     }
