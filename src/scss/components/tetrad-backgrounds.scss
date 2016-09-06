@@ -2,11 +2,27 @@
 .code-A,
 .code-B,
 .code-K, .code-N {
-    // background-image: url('../img/circle.svg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 9px;
-    background-size: 100%;
+    background-size: $lg-map-2k-width;
+}
+
+.double {
+    .code-A,
+    .code-B,
+    .code-K, .code-N {
+        background-size: $sm-map-2k-width;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .code-A,
+    .code-B,
+    .code-K, .code-N {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: $tablet-map-2k-width;
+    }
 }
 
 /* Hide data layers */
