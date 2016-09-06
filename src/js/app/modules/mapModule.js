@@ -15,29 +15,9 @@ MapModule.prototype.setSpecies = function(species) {
     this.species = species;
 };
 
-MapModule.prototype.updateSelectedTetrad = function(tetradId) {
-    // reveal the info box if hidden
-    $('#' + this.context).find('.tetrad-meta-wrapper').removeClass('hide');
-    var $tetrad = $('#' + tetradId);
-    if (this.tetrad.active) {
-        var $prevTetrad = $('#' + this.tetrad.domId);
-        $prevTetrad.removeClass('selected');
-        $tetrad.addClass('selected');
-    } else {
-        $('#' + tetradId).addClass('selected');
-    }
+MapModule.prototype.setFetchingData = function(status) {
+    this.fetchingData = status;
 }
-
-MapModule.prototype.hideCurrentlySelectedTetradInfo = function(tetradId) {
-    var $tetrad = $('#' + tetradId);
-    $('#' + this.context).find('.tetrad-meta-wrapper').addClass('hide');
-    $tetrad.removeClass('selected');
-    $('#' + this.context).removeClass('tetrad-active');
-    this.tetrad.active = false;
-    console.log(this);
-}
-
-
 
 MapModule.prototype.setTetradStatus = function(tetradId, id) {
     this.tetrad = {
@@ -50,6 +30,9 @@ MapModule.prototype.setTetradStatus = function(tetradId, id) {
 MapModule.prototype.logModule = function() {
     console.log(this);
 }
+
+
+
 
 
 
@@ -101,7 +84,7 @@ MapModule.prototype.getTetradData = function() {
         for (var i = 0; i < sortList.length; i++) {
             var theCode = data[orginalList.indexOf(sortList[i])]['Code'];
             $('<li/>', {
-                html: sortList[i] + '<span class="code-' + theCode + '"></span>'
+                html: sortList[i].trim() + '<span class="code-' + theCode + '"></span>'
             }).appendTo(tetradList);
         }
         obj.tetrad.currentList = tetradList;
@@ -114,6 +97,7 @@ MapModule.prototype.getTetradData = function() {
         window.setTimeout(function(){
             obj.stopSpinner.call(obj, ['tetrad-meta']);
             obj.updateStateEls.stop.call(obj, obj.context);
+            obj.setFetchingData(false);
         }, 1000);
     })
     .fail(function() {
@@ -175,6 +159,7 @@ MapModule.prototype.getData = function() {
             window.setTimeout(function(){
                 obj.stopSpinner.call(obj, ['map','tetrad-meta']);
                 obj.updateStateEls.stop.call(obj, obj.context);
+                obj.setFetchingData(false);
             }, 1000);
         })
         .fail(function() {
@@ -321,14 +306,36 @@ MapModule.prototype.updateTeradBox = function () {
 }
 
 MapModule.prototype.updateSpeciesSelect = function() {
-    $('#' + this.context)
-        .find('.select-species')
-            .val(this.species)
-                .trigger('chosen:updated');
+    console.log(this.species);
+    var chosenList = $('#' + this.context).find('.select-species');
+    chosenList.val(this.species);
+    chosenList.trigger("chosen:updated");
 }
 
 MapModule.prototype.updateTetradsPresent = function(length) {
     $('#' + this.context).find('.tet_pres').html(length);
+}
+
+MapModule.prototype.updateSelectedTetrad = function(tetradId) {
+    // reveal the info box if hidden
+    $('#' + this.context).find('.tetrad-meta-wrapper').removeClass('hide');
+    var $tetrad = $('#' + tetradId);
+    if (this.tetrad.active) {
+        var $prevTetrad = $('#' + this.tetrad.domId);
+        $prevTetrad.removeClass('selected');
+        $tetrad.addClass('selected');
+    } else {
+        $('#' + tetradId).addClass('selected');
+    }
+}
+
+MapModule.prototype.hideCurrentlySelectedTetradInfo = function(tetradId) {
+    var $tetrad = $('#' + tetradId);
+    $('#' + this.context).find('.tetrad-meta-wrapper').addClass('hide');
+    $tetrad.removeClass('selected');
+    $('#' + this.context).removeClass('tetrad-active');
+    this.tetrad.active = false;
+    console.log(this);
 }
 
 MapModule.prototype.updateSums = function() {
@@ -372,7 +379,6 @@ MapModule.prototype.updateKeys = function() {
     }
     $(keyEls[0]).addClass('active');
 }
-
 
 MapModule.prototype.toggleDataLayer = function($el) {
     $el.is(":checked") ? $('#' + this.context).removeClass('data-off') : $('#' + this.context).addClass('data-off');

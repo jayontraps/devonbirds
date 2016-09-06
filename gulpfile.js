@@ -110,7 +110,7 @@ gulp.task('reload-js', ['lintjs', 'combine' ], function() {
 });
 
 gulp.task('reload-css', ['sass'], function() {
-    // browserSync.reload();
+    browserSync.reload();
 });
 
 

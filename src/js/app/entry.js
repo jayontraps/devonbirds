@@ -34,6 +34,10 @@ $(document).ready(function() {
 
         $('.container').on('change', '.select-species', function(event) {
             var currentMap = event.delegateTarget.id;
+            if (maps[currentMap].fetchingData) {
+                return false;
+            }
+            maps[currentMap].setFetchingData(true);
             maps[currentMap].request = 'species';
             maps[currentMap].startSpinner(['map']);
             maps[currentMap].setSpecies(this.value.trim());
@@ -44,6 +48,10 @@ $(document).ready(function() {
 
         $('.container').on('change', '.select-data-set', function(event) {
             var currentMap = event.delegateTarget.id;
+            if (maps[currentMap].fetchingData) {
+                return false;
+            }
+            maps[currentMap].setFetchingData(true);
             maps[currentMap].request = 'dataset';
             maps[currentMap].startSpinner(['map']);
             maps[currentMap].setDataset(this.value);
@@ -54,10 +62,12 @@ $(document).ready(function() {
         });
 
         $('.container').on('click', '.tenk > div', function(event) {
-
+            var currentMap = event.delegateTarget.id;
+            if (maps[currentMap].fetchingData) {
+                return false;
+            }
+            maps[currentMap].setFetchingData(true);
             var isSelected = $(this).hasClass('selected');
-
-            var currentMap = event.delegateTarget.id,
                 tetradId = event.target.id,
                 tetradName = event.target.id.slice(3, 8);
 
@@ -75,9 +85,12 @@ $(document).ready(function() {
 
         $('.container').on('click', '.tetrad-list li', function(event) {
             var currentMap = event.delegateTarget.id;
+            if (maps[currentMap].fetchingData) {
+                return false;
+            }
+            maps[currentMap].setFetchingData(true);
             maps[currentMap].request = 'species';
             maps[currentMap].startSpinner(['map']);
-            // maps[currentMap].setSpecies(this.innerText.trim());
             maps[currentMap].setSpecies($(this).text());
             maps[currentMap].getData();
             maps[currentMap].updateSpeciesSelect();
@@ -85,8 +98,8 @@ $(document).ready(function() {
         });
 
         $('.container').on('click', '.data-later-toggle', function(event) {
-            var currentMap = event.delegateTarget.id,
-            $this = $(this);
+            var currentMap = event.delegateTarget.id;
+            var $this = $(this);
             maps[currentMap].toggleDataLayer($this);
         });
 
