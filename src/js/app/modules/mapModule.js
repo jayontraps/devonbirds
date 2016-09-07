@@ -59,7 +59,8 @@ MapModule.prototype.getTetradData = function() {
         url: '../ajax/tetradData.php',
         type: 'POST',
         dataType: 'json',
-        data: postData
+        data: postData,
+        timeout: 12000
     })
     .done(function(data){
         obj.tetrad.counts = obj.getSums(data);
@@ -102,6 +103,10 @@ MapModule.prototype.getTetradData = function() {
     })
     .fail(function() {
         console.log("getTetradData - error");
+        window.setTimeout(function(){
+            obj.stopSpinner.call(obj, ['tetrad-meta']);
+            obj.setMapErrorMsg(true, 'tetrad-request');
+        }, 1000);
     })
     .always(function() {
         // console.log("getTetradData - complete");
@@ -124,7 +129,8 @@ MapModule.prototype.getData = function() {
             url: '../ajax/speciesData.php',
             type: 'POST',
             dataType: 'json',
-            data:  formData
+            data:  formData,
+            timeout: 12000
         })
         .done(function(data) {
             // remove previous results using currentTetradArr
@@ -164,6 +170,10 @@ MapModule.prototype.getData = function() {
         })
         .fail(function() {
             console.log("getData - error");
+            window.setTimeout(function(){
+                obj.stopSpinner.call(obj, ['map','tetrad-meta']);
+                obj.setMapErrorMsg(true, 'data-request');
+            }, 1000);
         })
         .always(function() {
         });
@@ -219,6 +229,20 @@ MapModule.prototype.getLatinName = function() {
 
 
 /* DOM */
+
+MapModule.prototype.setMapErrorMsg = function(status, context) {
+
+    var $container;
+
+    context === "tetrad-request" ? $container = $('.tetrad-meta') : $container = $('.map-container');
+
+    var $errorMsg = $('#' + this.context).find($container).find('.error-wrap');
+    if (status) {
+        $errorMsg.css('display', 'flex');
+        return false;
+    }
+    $errorMsg.css('display', 'none');
+}
 
 MapModule.prototype.startSpinner = function(els) {
     if (Array.isArray(els) && els.length) {

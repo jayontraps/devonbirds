@@ -16,7 +16,11 @@ body {
 .header, .footer {
     height: 80px;
     background-color: #fafafa;
+}
+
+.inner-wrap {
+    width: 100%;
     max-width: $max_width;
-    position: relative;
     margin: 0 auto;
+    position: relative;
 }

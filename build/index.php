@@ -12,11 +12,17 @@
         </script>
     </head>
     <body>
-        <div class="header">
+        <div class="header"></div>
+        <div class="inner-wrap group">
             <div id="js-compare-toggle" class="devon-btn">Compare Maps</div>
         </div>
+
         <?php include('inc/map-page.php'); ?>
-        <div class="footer"></div>
+
+        <div class="footer">
+            <div class="inner-wrap"></div>
+        </div>
+
         <script src="js/all.min.js"></script>
 
     </body>

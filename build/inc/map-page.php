@@ -12,6 +12,7 @@
                 <div class="map-border">
                     <div class="map-container clearfix">
                         <?php include('inc/spinner.php'); ?>
+                        <?php include('inc/map-error.php'); ?>
                         <?php include('inc/overlays.php'); ?>
                         <?php include('inc/map-grid-1.php'); ?>
                     </div>
@@ -40,6 +41,7 @@
                 <div class="map-border">
                     <div class="map-container clearfix">
                         <?php include('inc/spinner.php'); ?>
+                        <?php include('inc/map-error.php'); ?>
                         <?php include('inc/overlays.php'); ?>
                         <?php include('inc/map-grid-2.php'); ?>
                     </div>

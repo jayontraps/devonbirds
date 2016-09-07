@@ -1,5 +1,6 @@
 <div class="tetrad-meta state">
     <?php include('inc/spinner.php'); ?>
+    <?php include('inc/map-error.php'); ?>
     <div class="tetrad-meta-wrapper">
         <h3 class="tetrad-title">Click on the map for tetrad information</h3>
         <div class="tet-sums">

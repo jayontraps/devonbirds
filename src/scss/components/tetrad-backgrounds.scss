@@ -27,18 +27,24 @@
 
 /* Hide data layers */
 .data-off {
-    .code-A,
-    .code-B,
-    .code-K, .code-N {
-        background-image: none;
-    }
-    .sitters-A,
-    .sitters-B,
-    .sitters-K {
-        background-color: transparent;
-    }
-    .pres {
-        background-color: transparent;
+    .parent {
+        .code-A,
+        .code-B,
+        .code-K, .code-N {
+            background-image: none;
+        }
+        .sitters-A,
+        .sitters-B,
+        .sitters-K {
+            background-color: transparent;
+        }
+        .pres {
+            background-color: transparent;
+        }
+
+        > div {
+            background-color:transparent;
+        }
     }
 }
 

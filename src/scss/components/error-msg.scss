@@ -1,0 +1,21 @@
+.error-wrap {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255,.75);
+}
+
+.error-msg {
+    display: inline-block;
+    padding: 1rem;
+    border: $devon_border;
+}
