@@ -3,7 +3,7 @@
     <div class="overlay earth on"></div>
     <div class="overlay borders on"></div>
     <div class="overlay rivers on"></div>
-    <div class="overlay tk-grid on"></div>
+    <div class="overlay tk-grid"></div>
     <div class="overlay old"></div>
     <div class="overlay grassland"></div>
     <div class="overlay morland"></div>
