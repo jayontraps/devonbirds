@@ -7,6 +7,9 @@
 @import "grid";
 
 // components
+@import "components/checkbox";
+@import "components/button";
+@import "components/state";
 @import "components/button";
 @import "components/select-inputs";
 @import "components/spinner";
@@ -16,7 +19,6 @@
 @import "components/map-controls";
 @import "components/map-keys";
 @import "components/map-layout";
-@import "components/state";
 @import "components/overlay";
 @import "components/map-meta";
 @import "components/map-breeding-toggles";

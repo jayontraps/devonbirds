@@ -1,20 +1,3 @@
-.tetrad-meta {
-    border: $devon_border;
-    margin-top: $default_spacing;
-    padding: $default_spacing;
-    position: absolute;
-    bottom: $keys-height;
-    width: 100%;
-    height: 50%;
-}
-
-.double {
-    .tetrad-meta {
-        position: relative;
-        bottom: auto;
-    }
-}
-
 .tetrad-meta-wrapper {
     opacity: 1;
     &.hide {

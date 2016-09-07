@@ -1,10 +1,5 @@
 var MapModule = require('./modules/mapModule');
 var overlay = require('./modules/overlay');
-// core
-// gettingDate
-// updating the DOM
-
-
 
 
 $(document).ready(function() {
@@ -20,6 +15,26 @@ $(document).ready(function() {
 
     // map page
     if ( typeof mapPage !== 'undefined' && mapPage) {
+
+
+        // toogle double view
+        var $wrapper = $('#tetrad-maps');
+        function doubleOn($btn) {
+            $wrapper.addClass('double');
+            $btn.addClass('active');
+        };
+        function doubleOff($btn) {
+            $wrapper.removeClass('double');
+            $btn.removeClass('active');
+        };
+
+        $('#js-compare-toggle').on('click', function() {
+            var $btn = $(this);
+            $(this).hasClass('active') ? doubleOff($btn) : doubleOn($btn);
+        });
+
+
+
         // setup the mapModules
         var maps = {};
         maps.m1_ = new MapModule('m1_');

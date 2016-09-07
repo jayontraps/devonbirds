@@ -1,4 +1,6 @@
 /* requires:
+jquery-3.1.0.min.js
+modernizr-custom.js
 chosen.jquery.min.js
 speciesList.js
 latinNames.js

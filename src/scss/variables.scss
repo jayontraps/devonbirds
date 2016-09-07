@@ -17,11 +17,11 @@ $default_spacing: 1.5rem;
 
 // maps
 // desktop
-$lg-map-width: 650px;
+// $lg-map-width: 650px;
 $lg-map-width: 585px;
-$lg-map-10k-width: 50px;
+// $lg-map-10k-width: 50px;
 $lg-map-10k-width: 45px;
-$lg-map-2k-width: 10px;
+// $lg-map-2k-width: 10px;
 $lg-map-2k-width: 9px;
 
 
@@ -43,18 +43,26 @@ $keys-height: 120px;
 // $lg-map-width: 450px;
 
 // colors
+
+$border-color: #999;
+$body_bgc: transparent;
+$body_color: black;
 $grey: rgba(0,0,0,.2);
+
+// datasets
 $dbdensity : red;
 $dwdensity : blue;
 $sitters: orange;
 
+// buttons
+$btn_bgc: black;
+$btn_bgc_hover: rgba(0,0,0,.5);
+$btn-active: $border-color;
+
+
 $sitters_pos: rgba(255,215,158,.75); // #FFD79E
 $sitters_prob: rgba(255,189,86,.75); // #FFBD56;
 $sitters_conf: rgba(235,141,0,.75); // #EB8D00;
-
-
-$border-color: #999;
-$body_bgc: transparent;
 
 // borders
 $devon_border: 1px solid $border-color;

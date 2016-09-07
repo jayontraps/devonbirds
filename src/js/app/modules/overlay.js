@@ -1,4 +1,4 @@
-var overlay = (function () {
+var overlay = (function ($) {
     function show(layer, $context) {
             var $layer = $('.' + layer);
         $context.find($layer).addClass('on');
@@ -12,7 +12,7 @@ var overlay = (function () {
         show: show,
         hide: hide
     };
-}());
+}(jQuery));
 
 
 module.exports = overlay;

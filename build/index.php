@@ -13,31 +13,11 @@
     </head>
     <body>
         <div class="header">
-            <input type="checkbox" id="toggleDouble">
-            <label>Toggle</label>
+            <div id="js-compare-toggle" class="devon-btn">Compare Maps</div>
         </div>
         <?php include('inc/map-page.php'); ?>
-
         <div class="footer"></div>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
         <script src="js/all.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                var $wrapper = $('#tetrad-maps');
-                // function addPageClass(argument) {
-                //     $wrapper.addClass('double');
-                // }
-                // function removePageClass(argument) {
-                //     $wrapper.removeClass('double');
-                // }
-                $('#toggleDouble').on('click', function() {
-                    $(this).is(":checked") ? $wrapper.addClass('double') : $wrapper.removeClass('double');
-                });
-            });
-
-        </script>
 
     </body>
 </html>

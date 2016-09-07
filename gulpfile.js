@@ -62,16 +62,28 @@ gulp.task('minify-css', function() {
 });
 
 
-gulp.task('js-plugins', function() {
-    return gulp.src(src + 'js/plugins/**/*.js')
+gulp.task('scripts', function() {
+    return gulp.src(src + 'js/scripts/*.js')
         .pipe(deporder())
-        .pipe(concat('all.js'))
+        .pipe(concat('scripts.js'))
         .pipe(gulp.dest(dest + 'js/'));
 });
 
 
-gulp.task('combine', [ 'browserify', 'js-plugins' ], function() {
-    return gulp.src([ dest + 'js/all.js', dest + 'js/bundle.js' ])
+gulp.task('browserify', function () {
+    return browserify(src + 'js/app/entry', { debug: true})
+        .bundle()
+        .on('error', errorAlert)
+        .pipe(source('bundle.js'))
+        .pipe(gulp.dest(dest + 'js/'));
+});
+
+
+gulp.task('combine', ['scripts', 'browserify'], function() {
+    return gulp.src([
+        dest + 'js/scripts.js',
+        dest + 'js/bundle.js'
+    ])
     .pipe(concat('all.min.js'))
     .pipe(gulpif(!devBuild, uglify()))
     .pipe(gulp.dest(dest + 'js/'));
@@ -80,20 +92,12 @@ gulp.task('combine', [ 'browserify', 'js-plugins' ], function() {
 
 
 gulp.task('lintjs', function() {
-    return gulp.src(src + 'js/*.js')
+    return gulp.src(src + 'js/app/**/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter(stylish));
 });
 
 
-
-gulp.task('browserify', function () {
-    return browserify(src + 'js/app/entry', { debug: true})
-        .bundle()
-        .on('error', errorAlert)
-        .pipe(source('bundle.js'))
-        .pipe(gulp.dest(dest + 'js'));
-});
 
 
 gulp.task('browser-sync', function() {
@@ -110,7 +114,7 @@ gulp.task('reload-js', ['lintjs', 'combine' ], function() {
 });
 
 gulp.task('reload-css', ['sass'], function() {
-    browserSync.reload();
+    // browserSync.reload();
 });
 
 
