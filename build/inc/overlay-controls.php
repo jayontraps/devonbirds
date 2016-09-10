@@ -21,7 +21,7 @@
         <label>Rivers</label>
     </li>
     <li class="checkbox">
-        <input type="checkbox" checked name="tk-grid" class="ov-toggle">
+        <input type="checkbox" name="tk-grid" class="ov-toggle">
         <label>10K Grid</label>
     </li>
     <li class="checkbox">

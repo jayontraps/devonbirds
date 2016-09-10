@@ -27,27 +27,21 @@
 
 /* Hide data layers */
 .data-off {
-    .parent {
+    // .parent {
         .code-A,
         .code-B,
         .code-K, .code-N {
             background-image: none;
         }
-        .sitters-A,
-        .sitters-B,
-        .sitters-K {
-            background-color: transparent;
-        }
         .pres {
             background-color: transparent;
         }
 
-        > div {
+        .map-row > div  > div {
             background-color:transparent;
         }
-    }
+    // }
 }
-
 
 
 
@@ -56,13 +50,6 @@
     .code-B,
     .code-K, .code-N {
         background-image: none;
-    }
-}
-.sitters-off {
-    .sitters-A,
-    .sitters-B,
-    .sitters-K {
-        background-color: transparent;
     }
 }
 
@@ -79,33 +66,54 @@
     background-image: url('../img/circle-4.svg');
 }
 
-.sitters-A {
-    background-color: $sitters_conf;
-}
-.sitters-B {
-    background-color: $sitters_prob;
-}
-.sitters-K {
-    background-color: $sitters_pos;
+
+
+
+/* 10K species dbreed10 */
+
+[data-set="dbreed10"] {
+    .code-A,
+    .code-B,
+    .code-K, .code-N {
+        background-size: $lg-map-10k-width;
+    }
+
+    .double {
+        .code-A,
+        .code-B,
+        .code-K, .code-N {
+            background-size: $sm-map-10k-width;
+        }
+    }
+
 }
 
+@media screen and (max-width: 1025px) {
+    [data-set="dbreed10"] {
+        .code-A,
+        .code-B,
+        .code-K, .code-N {
+            background-size: $tablet-map-10k-width;
+        }
+    }
+}
 
 
 [data-set="dwdensity"] {
 
-    .code-7 {
+    .code-9 {
         background-color: rgba(0,11,140, 1);
     }
-    .code-6 {
+    .code-8 {
         background-color: rgba(0,11,140, .84);
     }
-    .code-5 {
+    .code-7 {
         background-color: rgba(0,11,140,.70);
     }
-    .code-4 {
+    .code-5 {
         background-color: rgba(0,11,140,.56);
     }
-    .code-3 {
+    .code-4 {
         background-color: rgba(0,11,140, .42);
     }
     .code-2 {
@@ -119,19 +127,19 @@
 
 [data-set="dbdensity"] {
 
-    .code-7 {
+    .code-9 {
         background-color: rgba(196,0,1, 1);
     }
-    .code-6 {
+    .code-8 {
         background-color: rgba(196,0,1, .84);
     }
-    .code-5 {
+    .code-7 {
         background-color: rgba(196,0,1,.70);
     }
-    .code-4 {
+    .code-5 {
         background-color: rgba(196,0,1,.56);
     }
-    .code-3 {
+    .code-4 {
         background-color: rgba(196,0,1, .42);
     }
     .code-2 {

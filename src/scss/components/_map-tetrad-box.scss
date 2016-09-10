@@ -1,5 +1,6 @@
 .tetrad-meta-wrapper {
     opacity: 1;
+    position: relative;
     &.hide {
         opacity: 0;
     }
@@ -12,7 +13,7 @@
 
 .tetrad-active {
     .tetrad-list-wrapper {
-        height: 270px;
+        height: 230px;
         overflow-x: hidden;
     }
 }
@@ -28,6 +29,12 @@
 .tet-sums {
     display: none;
     margin-bottom: .75rem;
+}
+
+.gmap-link {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .tetrad-list {

@@ -1,4 +1,4 @@
-.parent {
+[data-tetrad="2K"] {
     &:hover {
         cursor: pointer;
     }
@@ -6,7 +6,7 @@
 
 
 
-.tenk {
+.map-row > div {
     margin: 0;
     padding: 0;
     width: $lg-map-10k-width;
@@ -156,7 +156,7 @@
 }
 
 .double {
-    .tenk {
+    .map-row > div {
         margin: 0;
         padding: 0;
         width: $sm-map-10k-width;
@@ -308,7 +308,7 @@
 
 
 @media screen and (max-width: 1025px) {
-.tenk {
+.map-row > div {
     width: $tablet-map-10k-width;
     height: $tablet-map-10k-width;
 

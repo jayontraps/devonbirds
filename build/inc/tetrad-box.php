@@ -11,6 +11,7 @@
                 <li>Confirmed: <span class="tet-conf"></span></li>
             </ul>
         </div>
+        <div class="gmap-link"></div>
         <div class="tetrad-list-wrapper"></div>
     </div>
 </div>

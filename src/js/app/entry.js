@@ -8,31 +8,29 @@ $(document).ready(function() {
     $('.ov-toggle').on('click', function() {
         var $this = $(this),
             layer = $this.attr('name'),
-            context = $this.closest('.container')
+            context = $this.closest('.container');
         $this.is(":checked") ? overlay.show(layer, context) : overlay.hide(layer, context);
     });
+
+    // toogle double view
+    var $wrapper = $('#tetrad-maps');
+    function doubleOn($btn) {
+        $wrapper.addClass('double');
+        $btn.addClass('active');
+    }
+    function doubleOff($btn) {
+        $wrapper.removeClass('double');
+        $btn.removeClass('active');
+    }
 
 
     // map page
     if ( typeof mapPage !== 'undefined' && mapPage) {
 
-
-        // toogle double view
-        var $wrapper = $('#tetrad-maps');
-        function doubleOn($btn) {
-            $wrapper.addClass('double');
-            $btn.addClass('active');
-        };
-        function doubleOff($btn) {
-            $wrapper.removeClass('double');
-            $btn.removeClass('active');
-        };
-
         $('#js-compare-toggle').on('click', function() {
             var $btn = $(this);
             $(this).hasClass('active') ? doubleOff($btn) : doubleOn($btn);
         });
-
 
 
         // setup the mapModules
@@ -46,6 +44,7 @@ $(document).ready(function() {
 
         maps.m2_.setSpecies('Alpine Swift');
         maps.m2_.setDataset('dbreed');
+
 
         $('.container').on('change', '.select-species', function(event) {
             var currentMap = event.delegateTarget.id;
@@ -76,7 +75,8 @@ $(document).ready(function() {
             maps[currentMap].logModule();
         });
 
-        $('.container').on('click', '.tenk > div', function(event) {
+        // $('.container').on('click', '.tenk > div', function(event) {
+        $('.container').on('click', '[data-tetrad="2K"]', function(event) {    
             var currentMap = event.delegateTarget.id;
             if (maps[currentMap].fetchingData) {
                 return false;

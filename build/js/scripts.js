@@ -35,7 +35,7 @@ latinNames.js
         function createTetrad(id, parent) {
             var tet = document.createElement("div");
             tet.setAttribute('id', id);
-            // tet.setAttribute('class', "tetrad");
+            tet.setAttribute('data-tetrad', "2K");
             parent.appendChild(tet);
         }
 
@@ -73,3 +73,11 @@ latinNames.js
 	});
 
 })(jQuery);
+var tenkSpecies = ['Red Kite', 'Marsh Harrier', 'Little Ringed Plover', 'Dunlin', 'Common Sandpiper', 'Hobby', 'Peregrine', 'Woodlark', 'Lesser Spotted Woodpecker'];
+
+
+
+
+
+
+

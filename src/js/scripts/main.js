@@ -19,7 +19,7 @@ latinNames.js
         function createTetrad(id, parent) {
             var tet = document.createElement("div");
             tet.setAttribute('id', id);
-            // tet.setAttribute('class', "tetrad");
+            tet.setAttribute('data-tetrad', "2K");
             parent.appendChild(tet);
         }
 
